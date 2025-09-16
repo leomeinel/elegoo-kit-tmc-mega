@@ -10,17 +10,20 @@
 
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+#define SW1 5
+#define SW2 6
+#define D1 7
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  pinMode(SW1, INPUT_PULLUP);
+  pinMode(SW2, INPUT_PULLUP);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  if (digitalRead(SW1) == LOW) {
+    digitalWrite(D1, HIGH);
+  }
+  if (digitalRead(SW2) == LOW) {
+    digitalWrite(D1, LOW);
+  }
 }
-
-// put function definitions here:
-int myFunction(int x, int y) { return x + y; }
