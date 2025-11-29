@@ -9,20 +9,24 @@
 
 #include <Arduino.h>
 
-#define SW1 5
-#define SW2 6
-#define D1 7
+constexpr uint8_t PIN_SW1 = 5;
+constexpr uint8_t PIN_SW2 = 6;
+constexpr uint8_t PIN_D1 = 7;
 
-void setup() {
-  pinMode(SW1, INPUT_PULLUP);
-  pinMode(SW2, INPUT_PULLUP);
+void setup()
+{
+  pinMode(PIN_SW1, INPUT_PULLUP);
+  pinMode(PIN_SW2, INPUT_PULLUP);
 }
 
-void loop() {
-  if (digitalRead(SW1) == LOW) {
-    digitalWrite(D1, HIGH);
+void loop()
+{
+  if (digitalRead(PIN_SW1) == LOW)
+  {
+    digitalWrite(PIN_D1, HIGH);
   }
-  if (digitalRead(SW2) == LOW) {
-    digitalWrite(D1, LOW);
+  if (digitalRead(PIN_SW2) == LOW)
+  {
+    digitalWrite(PIN_D1, LOW);
   }
 }

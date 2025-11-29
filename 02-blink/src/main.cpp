@@ -7,16 +7,21 @@
  * URL: https://www.apache.org/licenses/LICENSE-2.0
  */
 
-#include "pins_arduino.h"
 #include <Arduino.h>
 
+#include "pins_arduino.h"
+
 // We could also just use LED_BUILTIN
-#define PIN_LED LED_BUILTIN
-#define DELAY_LED_BLINK 500
+constexpr uint8_t PIN_LED = LED_BUILTIN;
+constexpr uint32_t DELAY_LED_BLINK = 500;
 
-void setup() { pinMode(PIN_LED, OUTPUT); }
+void setup()
+{
+  pinMode(PIN_LED, OUTPUT);
+}
 
-void loop() {
+void loop()
+{
   digitalWrite(PIN_LED, HIGH);
   delay(DELAY_LED_BLINK);
   digitalWrite(PIN_LED, LOW);
